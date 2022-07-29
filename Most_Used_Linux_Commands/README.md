@@ -18,4 +18,16 @@
 
 # List All Services in Ubuntu
 
-```service --status-all```
+`service --status-all`
+
+# Display only running services in Ubuntu
+
+`service --status-all | grep '\[ + \]'`
+
+# Extract only stopped services in Ubuntu
+
+`service --status-all | grep '\[ - \]'`
+
+# Using the systemctl command
+
+`systemctl --type service --all`

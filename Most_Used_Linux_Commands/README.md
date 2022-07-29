@@ -14,6 +14,8 @@
 
 **`Ctrl-R`**  
 
-`(reverse-i-search)`':`
+```(reverse-i-search) :```
 
-#
+# List All Services in Ubuntu
+
+```service --status-all```

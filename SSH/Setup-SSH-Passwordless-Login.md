@@ -41,7 +41,7 @@ Generating public/private rsa key pair.
 * It also asks you to set a passphrase. Although this makes the connection even more secure, it may interrupt when setting up automated processes. Therefore, you can type in a passphrase or just press **Enter** to skip this step.
 
 ```
-Enter file in which to save the key (/home/fourd/.ssh/id_rsa):
+Enter file in which to save the key (/home/jack/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
 ```
 * The output then tells you where it stored the identification and public key and gives you the key fingerprint.

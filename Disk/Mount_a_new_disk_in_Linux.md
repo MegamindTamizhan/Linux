@@ -70,6 +70,18 @@ Syncing disks.
 
 **Eg: Last sector, +sectors or +size{K,M,G} (2048-67108863, default 67108863): +300G**
 
+`The partition table has been altered!`
+`Calling ioctl() to re-read partition table.`
+`Syncing disks.`
+
+If the above outputs through WARNING (Perform partprobe)
+
+**WARNING: Re-reading the partition table failed with error 16: Device or resource busy, the kernel still use the old table. The new table will be used at the nxt reboot or after you run "partprobe" is a program that informs the operating system kernel of partition table changes, by requesting that the operating system re-read the partition table**
+
+```
+root@skynet:~# partprobe /dev/sdb
+```
+
 If we now look at the devices again we will see that the new partition is visible as /dev/sdb1:
 
 ```
@@ -128,3 +140,7 @@ Running the mount command with no arguments shows us all currently mounted files
 Configuring to Automatically Mount a File System
 
 In order to configure the system so that the new disk is automatically mounted at the time boot we need an entry to be added to the /etc/fstab file.
+
+root@skynet:~# blkid /dev/sdb1
+/dev/sdb1: UUID="80f05d7d-05bd-49dc-b90f-1385cc1691d5" TYPE="ext4" PARTUUID="feab96f7-01"
+

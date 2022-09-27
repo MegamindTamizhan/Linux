@@ -141,6 +141,17 @@ Configuring to Automatically Mount a File System
 
 In order to configure the system so that the new disk is automatically mounted at the time boot we need an entry to be added to the /etc/fstab file.
 
+```
 root@skynet:~# blkid /dev/sdb1
 /dev/sdb1: UUID="80f05d7d-05bd-49dc-b90f-1385cc1691d5" TYPE="ext4" PARTUUID="feab96f7-01"
+```
+For Persistent Mount
 
+```
+root@skynet:~# vi /etc/fstab
+```
+Add this end of the line in fstab (80f05d7d-05bd-49dc-b90f-1385cc1691d5 replace with the required UUID)
+
+```
+/dev/mapper/80f05d7d-05bd-49dc-b90f-1385cc1691d5 /backup ext4 rw 0 0
+```

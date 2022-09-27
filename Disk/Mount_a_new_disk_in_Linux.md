@@ -153,5 +153,9 @@ root@skynet:~# vi /etc/fstab
 Add this end of the line in fstab (80f05d7d-05bd-49dc-b90f-1385cc1691d5 replace with the required UUID)
 
 ```
-/dev/mapper/80f05d7d-05bd-49dc-b90f-1385cc1691d5 /backup ext4 rw 0 0
+/dev/sdb1    /backup    ext4     rw       0 0
+
+or 
+
+UUID=80f05d7d-05bd-49dc-b90f-1385cc1691d5 /backup ext4 rw 0 0
 ```
